@@ -28,7 +28,7 @@ body {
     animation-name: aparecer_pagina;
     animation-timing-function: ease-in;
     animation-iteration-count: initial;
-    animation-duration: 3s;
+    animation-duration: 2s;
     animation-delay: 0s;
     transition: .2s;
     /* display: flex;
@@ -78,11 +78,19 @@ header {
     margin: 12em auto 0em auto;
 }
 
+/* correccion menu hamburguesa bootstrap*/
+.bg-light {
+    --bs-bg-opacity: 0;
+    background-color: unset;
+}
+
+/* correccion menu hamburguesa bootstrap*/
+
 #menu {
     background-color: var(--thirdly);
-    padding: 1.4em;
+    padding: .5em;
     width: 50vw;
-    margin: 1.5em auto 0em auto;
+    margin: 2em auto 0em auto;
 }
 
 #menu ul li a {
@@ -91,9 +99,9 @@ header {
     text-decoration: none;
     font-family: var(--font-primary);
     font-weight: 200;
-    font-size: 1.9em;
+    font-size: 2em;
     font-style: normal;
-    transition: .8s;
+    transition: 1s;
 }
 
 #menu ul li a:hover {
@@ -106,6 +114,8 @@ header {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
+    margin: auto;
+    /*cambio de margin a bootstrap*/
 }
 
 main {
@@ -115,6 +125,7 @@ main {
     grid-row: 2 / 3;
     grid-column: 1 / 2;
 }
+
 /* HEADER */
 
 /*  HOME  */
@@ -176,6 +187,7 @@ video {
     padding: .2em;
     background-color: var(--thirdly);
 }
+
 /*  HOME  */
 
 /*  GALERIA  */
@@ -193,6 +205,7 @@ video {
 
 .galeria__contenedor__item {
     overflow: hidden;
+    margin: 0;
 }
 
 .galeria__contenedor__item--img {
@@ -244,6 +257,7 @@ video {
     grid-column-end: span 2;
     grid-row-end: span 1;
 }
+
 /*  GALERIA  */
 
 /*  ACERCA */
@@ -264,6 +278,7 @@ video {
     background-color: var(--secondary);
     padding: .2em;
 }
+
 /*  ACERCA  */
 
 /*  TRABAJOS  */
@@ -275,16 +290,19 @@ video {
     margin: auto;
     /* gap: 10px; */
     background-image: linear-gradient(#59443f, #d9d2d0);
+    /*GRADIENTES*/
 }
 
 .muestras__trabajos>article:hover {
     background-image: linear-gradient(#d9d2d0, #012340, #d9d2d0);
+    /*GRADIENTES*/
 }
 
 .muestras__trabajos__imagenes {
     overflow: hidden;
     margin: 5px;
 }
+
 .muestras__trabajos {
     margin: 0 0 4em 0;
 }
@@ -331,6 +349,7 @@ video {
     font-family: var(--font-primary);
     font-size: 1.4em;
 }
+
 /*  TRABAJOS  */
 
 /*  CONTACTO  */
@@ -364,6 +383,7 @@ input {
 .muestrario_imagen {
     width: 100%;
 }
+
 /*  CONTACTO  */
 
 /* FOOTER */
@@ -386,6 +406,7 @@ footer ul {
     max-width: 80em;
     padding: .5em;
 }
+
 /* FOOTER */
 
 /* Desktop */
@@ -417,6 +438,7 @@ footer ul {
         width: 300px;
         height: auto;
     }
+
     /*  HOME  */
 
     /*  ACERCA */
@@ -427,6 +449,7 @@ footer ul {
     #imagen_perfil img {
         width: 20em;
     }
+
     /*  ACERCA  */
 
     /*  TRABAJOS  */
@@ -444,6 +467,7 @@ footer ul {
     .muestras__trabajos__imagenes>img {
         width: 30em;
     }
+
     /*  TRABAJOS  */
 
     /*  CONTACTO  */
@@ -454,10 +478,23 @@ footer ul {
     .main_contacto>h1 {
         margin-top: 0em;
     }
+
     /*  CONTACTO  */
 }
-/* Responsive a 1080px*/
 
+/* Responsive a 1080px*/
+@media screen and (max-width: 992px) {
+
+    /* MENU HAMBURGUESA BOOTSTRAP */
+    .collapse:not(.show) {
+        display: block;
+        /*correccion para que no desaparezca el navbar antes de 480px*/
+    }
+
+    .navbar-expand-lg .navbar-toggler {
+        display: none;
+    }
+}
 
 /* Responsive a 930px */
 @media screen and (max-width: 930px) {
@@ -474,6 +511,7 @@ footer ul {
     video {
         width: 500px;
     }
+
     /*  HOME  */
 
     /*  ACERCA */
@@ -484,6 +522,7 @@ footer ul {
     #imagen_perfil img {
         width: 25em;
     }
+
     /*  ACERCA  */
 
     /*  TRABAJOS  */
@@ -517,8 +556,10 @@ footer ul {
     .muestras__trabajos__textos {
         max-width: 80em;
     }
+
     /*  TRABAJOS  */
 }
+
 /* Responsive a 930px */
 
 
@@ -545,6 +586,7 @@ footer ul {
     video {
         width: 450px;
     }
+
     /*  HOME  */
 
     /*  GALERIA  */
@@ -564,6 +606,7 @@ footer ul {
     .imagen6:hover {
         transform: scale(250%);
     }
+
     /*  GALERIA  */
 
     /*  ACERCA */
@@ -575,6 +618,7 @@ footer ul {
         max-width: 500px;
         margin: 0 auto 1em auto;
     }
+
     /*ACERCA*/
 
     /*  TRABAJOS  */
@@ -601,6 +645,7 @@ footer ul {
     .muestras__trabajos__textos {
         max-width: 50em;
     }
+
     /*  TRABAJOS  */
 
     /*  CONTACTO  */
@@ -612,13 +657,31 @@ footer ul {
     .muestrario figure {
         display: none;
     }
+
     /*  CONTACTO  */
 }
+
 /*Responsive a 768 */
 
 
 /* Responsive a 480px*/
 @media screen and (max-width: 480px) {
+
+    /* Menu hamburguesa bootstrap*/
+    .collapse:not(.show) {
+        display: none;
+    }
+
+    .navbar-expand-lg .navbar-toggler {
+        display: block;
+        margin-left: auto;
+    }
+
+    .conteiner-fluid {
+        width: auto;
+    }
+
+    /* Menu hamburguesa bootstrap*/
     main {
         max-width: 450px;
     }
@@ -628,10 +691,21 @@ footer ul {
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
+        width: 100vw;
+        padding: 0 1em;
     }
 
     #menu {
         display: block;
+        background-color: unset;
+        width: auto;
+        margin-right: 1em;
+    }
+
+    #menu ul li a {
+        color: var(--secondary);
+        font-size: 2em;
+        /* correccion sobre el tamaño de tipografia*/
     }
 
     #logo {
@@ -706,13 +780,15 @@ footer ul {
         grid-column-start: span 6;
         grid-row-start: span 2;
     }
+
     /*  GALERIA  */
-    
+
     /*  ACERCA */
     .contenedor_about {
         max-width: 460px;
         margin: auto 3em;
     }
+
     /*  ACERCA  */
 
     /*  TRABAJOS  */
@@ -751,6 +827,7 @@ footer ul {
         margin: auto;
         max-width: 40em;
     }
+
     /*  TRABAJOS  */
 
     /*  CONTACTO  */
@@ -767,9 +844,11 @@ footer ul {
     input {
         margin: .5em auto;
     }
+
     /*  CONTACTO  */
 
 }
+
 /* Responsive a 480px*/
 
 
@@ -793,8 +872,9 @@ footer ul {
         max-width: 300px;
         margin: auto;
     }
+
     /*  ACERCA  */
-    
+
     /*  CONTACTO  */
     .main_contacto {
         display: flex;
@@ -813,6 +893,7 @@ footer ul {
     .muestrario figure {
         display: none;
     }
+
     /*  CONTACTO */
 
     /* TRABAJO */
@@ -820,34 +901,36 @@ footer ul {
         margin: auto;
         max-width: 30em;
     }
+
     /* TRABAJO */
 }
+
 /* Responsive a 320px */
 
 /* animaciones */
 @keyframes aparecer_pagina {
-    0%{
+    0% {
         opacity: 0%;
     }
 
-    20%{
+    20% {
         opacity: 0%;
-        
+
     }
 
-    30%{
+    30% {
         opacity: 25%;
     }
 
-    50%{
+    50% {
         opacity: 50%;
     }
 
-    75%{
+    75% {
         opacity: 95%;
     }
 
-    100%{
+    100% {
         opacity: 100%;
     }
 }
